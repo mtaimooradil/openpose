@@ -179,7 +179,7 @@ endif (WIN32)
 # Suboptions for Caffe DL Framework
 include(CMakeDependentOption)
 if (${DL_FRAMEWORK} MATCHES "CAFFE" OR ${DL_FRAMEWORK} MATCHES "NV_CAFFE")
-  CMAKE_DEPENDENT_OPTION(BUILD_CAFFE "Build Caffe as part of OpenPose." ON
+  CMAKE_DEPENDENT_OPTION(BUILD_CAFFE "Build Caffe as part of18 OpenPose." ON
     "DL_FRAMEWORK" ON)
   # OpenPose flags
   add_definitions(-DUSE_CAFFE)
@@ -359,7 +359,7 @@ if (WITH_OPENCV_WITH_OPENGL)
   add_definitions(-DUSE_OPENCV_WITH_OPENGL)
 endif (WITH_OPENCV_WITH_OPENGL)
 if (WITH_3D_RENDERER)
-  # OpenPose flags1807aad
+  # OpenPose flags
   add_definitions(-DUSE_3D_RENDERER)
 endif (WITH_3D_RENDERER)
 if (WITH_CERES)
@@ -518,7 +518,7 @@ if (UNIX OR APPLE)
       message(STATUS "cuDNN not found.")
       execute_process(COMMAND cat install_cudnn_up_to_Ubuntu16.sh WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/scripts/ubuntu)
       message(FATAL_ERROR "Install cuDNN using the above commands. or turn off cuDNN by setting USE_CUDNN to OFF.")
-    endif (USE_CUDNN AND NOT CUDNN_FOUND)1807aad
+    endif (USE_CUDNN AND NOT CUDNN_FOUND)
   endif (${GPU_MODE} MATCHES "CUDA")
 
   if (NOT GLOG_FOUND)
